@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.20.RELEASE'
+		springBootVersion = '1.5.21.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -32,7 +32,7 @@ configurations.all {
 }
 
 ext{
-	resilience4jVersion = '0.17.0'
+	resilience4jVersion = '1.7.1'
 	microMeterVersion = '1.1.4'
 }
 
@@ -45,11 +45,11 @@ dependencies {
 	compile("io.micrometer:micrometer-spring-legacy:${microMeterVersion}")
 	compile("io.micrometer:micrometer-registry-prometheus:${microMeterVersion}")
 
-	compile("io.github.resilience4j:resilience4j-spring-boot:${resilience4jVersion}")
+	compile("io.github.resilience4j:resilience4j-spring:${resilience4jVersion}")
 	compile("io.github.resilience4j:resilience4j-micrometer:${resilience4jVersion}")
 	compile("io.github.resilience4j:resilience4j-rxjava2:${resilience4jVersion}") // Optional
 
-	compile("io.vavr:vavr-jackson:0.9.1")
+	compile("io.vavr:vavr-jackson:0.10.2")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
